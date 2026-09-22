@@ -28,13 +28,17 @@ nasm -f elf64 bin_sh.asm -o bin_sh.o
 ```
 
 ## Extract the shellcode
-
+For objects to bin files.
 ```bash
 objcopy -O binary bin_sh.o bin_sh.bin
 ```
-
 ```bash
 objdump -d -M intel binary.o
+```
+
+For extract shellcode from bin file
+```bash
+hexdump -C shell.bin
 ```
 
 ## Test
